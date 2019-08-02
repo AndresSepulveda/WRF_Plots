@@ -1,27 +1,33 @@
-%% Serie de tiempo desde wrfout
+function seriewrfout(dirdata,filename,var,xx,yy)
 
-%directorio 
-dir='/home/chris/Documentos/Toolbox_WRF_matlab';
+%
+% Serie de tiempo desde wrfout
+%
+ 
+dir='/home/matlab/WRF/Toolbox_WRF_matlab';
 
 addpath([dir]);
 addpath([dir,'/funciones']);
 addpath([dir,'/scripts']);
-addpath([dir,'/funciones/m_map']);
+addpath(['/home/matlab/croco_tools/UTILITIES/m_map1.4h']);
 
+%
 % Nombre wrfout
+%
 
-d01='wrfout_d01_2019-01-01_00:00:00';
-tname='Esto es una serie de algo';% titulo de la figura
-plotname='rqrevev';% nombre output
+d01=[dirdata,filename,'.nc'];
 
-dt=30;%intervalo de salida wrfout minutos
+tname=[var,'_',filename];            %'T2 - 2018';% titulo de la figura
+plotname=['seriewrfout_',filename];  %'T2_2018';% nombre output
+
+dt=60;%intervalo de salida wrfout minutos
 
 %posicion grilla a evaluar
 
-xx=[-71]; % longitud
-yy=[-36]; % latitud
+%xx=[-71]; % longitud
+%yy=[-36]; % latitud
 
-myVar='U10';%variable a evaluar
+myVar=var;%variable a evaluar
 
 %% No modificar
 
@@ -48,23 +54,22 @@ mas_cercanox(i)=x(positionx(i));
 mas_cercanoy(i)=y(positiony(i));
 end
 
-data=ncread(d01,myVar,[positionx positiony 1 ],[1 1 Inf]);
+data=squeeze(ncread(d01,myVar,[positionx positiony 1 ],[1 1 Inf]));
 aux=ncinfo(d01,myVar);%,[positionx positiony 1 ],[1 1 Inf]);
 [~,~,description,units,~,~]=aux.Attributes.Value;
 
-% for i=1:100
-%     data=[data 200+rand*10];
-% end
-% data=data';
 
 h=figure;
 plot([0:length(data)-1]*(dt/60),data,'k','linewidth',2);
-title(tname)
+title([tname, ' Lat: ',num2str(yy), ' Lon: ',num2str(xx)])
 xlabel('Horas')
 ylabel([description,' [',units,']'])
 axis tight
 
-saveas(h,[pwd,'/../figuras/',plotname],'png');
+saveas(h,[plotname],'png');
 close all
+
+return
+
 
 
