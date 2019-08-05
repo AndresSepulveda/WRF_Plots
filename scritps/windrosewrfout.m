@@ -42,11 +42,14 @@ y=lat; % x vector arbitrario
 
 clear minimox positionx minimoy positiony mas_cercanox mas_cercanoy
 for i=1:length(xx)
-[minimox(i),positionx(i)]=min(abs(x-xx(i)));
-[minimoy(i),positiony(i)]=min(abs(y-yy(i)));
-mas_cercanox(i)=x(positionx(i));
-mas_cercanoy(i)=y(positiony(i));
+   [minimox(i),positionx(i)]=min(abs(x-xx(i)));
+   [minimoy(i),positiony(i)]=min(abs(y-yy(i)));
+   mas_cercanox(i)=x(positionx(i));
+   mas_cercanoy(i)=y(positiony(i));
 end
+
+display('Diferencia en la posicion:')
+diff=gpsdistance(yy,xx,mas_cercanoy,mas_cercanox)
 
 myVar='U10';
 data=ncread(d01,myVar,[positionx positiony 1 ],[1 1 Inf]);
