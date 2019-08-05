@@ -76,3 +76,14 @@ xlabel('Modelo')
 ylabel('%')
 title('NL - Direccion Viento [grados]')
 axis([0 360 0 7])
+
+figure(5)
+subplot(2,1,1)
+boxplot([ws_m, ws_d]);
+%xlabel('Modelo - Mediciones')
+title('Magnitud del viento [m/s]')
+
+subplot(2,1,2)
+boxplot([wd_m,wd_d]);
+title('Direccion del viento [deg]')
+xlabel('Modelo - Mediciones')
