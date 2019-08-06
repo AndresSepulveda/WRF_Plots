@@ -41,8 +41,9 @@ pcolor(freq_mat)
 xlabel('Hora')
 ylabel('Magnitud')
 title('Modelo KC 2018')
-colorbar
+h=colorbar();
 caxis([0 40])
+set(get(h,'ylabel'),'string','%','Fontsize',10)
 
 for i=1:14
 	for j=1:24
@@ -64,8 +65,9 @@ pcolor(freq_mat)
 xlabel('Hora')
 ylabel('Magnitud')
 title('Datos KC 2018')
-colorbar
+h=colorbar();
 caxis([0 40])
+set(get(h,'ylabel'),'string','%','Fontsize',10)
 
 print('-dpng','CicloDiario_Magnitud.png')
 
@@ -102,8 +104,9 @@ ylabel('Direccion')
 set(gca,'YTick',[1 4 7 10 13])
 set(gca,'YTickLabel',{'0','90','180','270','360'})
 title('Modelo KC 2018')
-colorbar
+h=colorbar();
 caxis([0 40])
+set(get(h,'ylabel'),'string','%','Fontsize',10)
 
 for i=1:length(direccion)-1
 	for j=1:length(horas)
@@ -127,7 +130,8 @@ ylabel('Direccion')
 set(gca,'YTick',[1 4 7 10 13])
 set(gca,'YTickLabel',{'0','90','180','270','360'})
 title('Datos KC 2018')
-colorbar
+h=colorbar();
 caxis([0 40])
+set(get(h,'ylabel'),'string','%','Fontsize',10)
 
 print('-dpng','CicloDiario_Direccion.png')
