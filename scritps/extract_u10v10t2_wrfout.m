@@ -17,13 +17,11 @@ plotname=['rosewindwrfout_',filename];% nombre output
 
 dt=60;%intervalo de salida wrfout minutos
 
-%posicion grilla a evaluar
-
-%%xx=[-71]; % longitud
-%%yy=[-36]; % latitud
-
-
-%% No modificar
+tiempo=ncread(d01,'Times');
+  year=squeeze(floor(str2num(tiempo(1:4,:)')));
+ month=squeeze(floor(str2num(tiempo(6:7,:)')));
+   day=squeeze(floor(str2num(tiempo(9:10,:)')));
+  hour=squeeze(floor(str2num(tiempo(12:13,:)')));
 
 XLAT=ncread(d01,'XLAT');%latitud (sur negativo)
 XLONG=ncread(d01,'XLONG');%longitud (oeste negativo)
@@ -64,8 +62,8 @@ t2=data;
 
 outfile=[double(t2) double(u) double(v) ws wd];
 
-%whos t2 u v ws wd outfile
-%%keyboard
+whos year month day hour t2 u v ws wd outfile
+outfile=[year month day hour double(t2) double(u) double(v) ws wd];
 
 %filename=['extract_',num2str(xx),num2str(yy),'_t2u10v10wswd.txt'];
 save 'extract_t2u10v10wswd.txt' outfile -ascii 
