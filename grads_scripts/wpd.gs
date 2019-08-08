@@ -1,0 +1,16 @@
+'reinit'
+'open salida_naty.ctl'
+'set t 1 163'
+'define rho=psfc/(287*T2)'
+'define xx=rho*mag(u10,v10)*mag(u10,v10)*mag(u10,v10)'
+'set t 1'
+'define pot=(1/(2*163))*sum(xx,t=1,t=163)'
+'set gxout shaded'
+'set mpdset hires'
+'set grads off'
+'d pot'
+'cbar'
+'draw title Wind Power Density [W/m^2]'
+'printim wpdd.jpg x2000 y1600'
+
+

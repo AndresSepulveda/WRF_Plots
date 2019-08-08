@@ -1,0 +1,7 @@
+'open d02.ctl'
+'meteo Linares     dom02 73 -71.59 -35.85'
+'meteo Cauquenes   dom02 73 -72.32 -35.97'
+'meteo Chillan     dom02 73 -72.1 -36.61'
+'meteo Concepcion  dom02 73 -73.03 -36.81'
+'meteo Lota        dom02 73 -73.16 -37.09'
+'quit'
