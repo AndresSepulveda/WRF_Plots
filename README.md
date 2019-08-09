@@ -2,8 +2,11 @@
 A selection of scripts to make plots from WRF output
 
 Matlab (*)
+
 NCL
+
 GRADS
+
 R
 
 ------
@@ -11,6 +14,7 @@ R
 Collaborators:
 
   Christian Segura (DGEO-UdeC, Chile)
+  
   Thibaut Lambert  (ENM, France)
 
 -------
