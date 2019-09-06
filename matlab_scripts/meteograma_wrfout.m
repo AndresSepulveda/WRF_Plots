@@ -1,3 +1,9 @@
+% @Author: Christian Segura
+% @Mail : chsegura@udec.cl
+
+% @Last Modified by:   Christian Segura
+% @Last Modified time: 2019-09-05 
+
 function meteograma_wrfout(dirdata,filename,xx,yy,t1,t2)
 
 % posicion grilla a evaluar
