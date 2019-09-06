@@ -1,3 +1,10 @@
+% @Author: Christian Segura
+% @Mail : chsegura@udec.cl
+% @Other : Main source from tskew.m by Steven K. Krueger 
+
+% @Last Modified by:   Christian Segura
+% @Last Modified time: 2019-09-05 
+
 function skewt_wrfout(dirdata,filename,xx,yy,t1)
 
 % posicion grilla a evaluar
