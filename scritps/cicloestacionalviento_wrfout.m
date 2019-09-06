@@ -1,3 +1,9 @@
+% @Author: Christian Segura
+% @Mail : chsegura@udec.cl
+
+% @Last Modified by:   Christian Segura
+% @Last Modified time: 2019-09-05 
+
 function cicloestacionalviento_wrfout(dirdata,filename,xx,yy)
 
 %% Rosa de vientos wrfout
