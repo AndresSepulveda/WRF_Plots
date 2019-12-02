@@ -185,7 +185,7 @@ TEMP=Tq.*((PTq./100000).^(2/7));% temperatura kelvin
 R=287;
 Rair=PTq./TEMP./R;% densidad del aire
 
-latitud=yy;% dregrees
+latitud=yy;% degrees
 longitud=xx;% degrees 
 elevacion=HGT;% msnm
 altura=alt;% m
