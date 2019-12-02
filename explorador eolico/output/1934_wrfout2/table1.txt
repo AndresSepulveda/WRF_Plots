@@ -1,0 +1,2 @@
+latitud longitud elevacion altura_1 altura_2 altura_3 altura_4 altura_5 altura_6 altura_7 altura_8 altura_9 altura_10 altura_11 altura_12 densidad
+-36 -73 0 5 16 26 37 47 57 68 78 95 125 168 224 1.1979772567406
