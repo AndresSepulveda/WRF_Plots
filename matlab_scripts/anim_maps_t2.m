@@ -34,10 +34,7 @@ for i=tini:tend
 end
 
 %
-%  
-%  gifsicle --delay 5 --loop=5  *gif > anim.gif
-%                               ^^^^
-%                        Poner los archivos explicitamente
+%  convert -delay 50 -loop 10 Mapas_T2_d01_*gif anim.gif
 %
 
 
