@@ -28,7 +28,11 @@ for i=tini:tend
 	if i == 8
 		ylabel('Latitud')
 	end
-	title(['T2(',num2str(i),')'])
+	if i <= 9
+		title(['T2: hora 0',num2str(i)])
+	else
+		title(['T2: hora ',num2str(i)])	
+	end
 	colorbar
 	caxis([-5 40])
 end
