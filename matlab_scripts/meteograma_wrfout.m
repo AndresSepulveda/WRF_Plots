@@ -209,7 +209,7 @@ plot([0:length(horas)-1],T2,'-or','linewidth',2,'MarkerFaceColor','r')
 grid on
 ylabel('T 2m [°C]')
 % xlabel('Horas desde inicio simulación')
-xlim([min(horas),max(horas)])
+xlim([auxs,auxe])
 
 hold on
 subplot(4,2,[7 8])
@@ -219,7 +219,7 @@ set(aux,{'FaceColor'},{'b';'cyan'});
 ylabel('PP total [mm/hr]')
 xlabel('Horas desde inicio simulación')
 legend(aux,'RAINNC','RAINC')
-xlim([min(horas),max(horas)])
+xlim([auxs,auxe])
 
 saveas(h,[pwd,'/../figuras/',plotname],'png');
 close all
