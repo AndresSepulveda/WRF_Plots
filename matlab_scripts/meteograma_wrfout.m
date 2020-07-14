@@ -169,7 +169,7 @@ T2=TT2.T2(1:end);
 %rain=TT2.rain(1:end);
 % ws=TT2.ws(1:end);
 %wd=TT2.wd(1:end);
-TEMPn=TT2.TEMPn;
+TEMPCn=TT2.TEMPCn;
 RHn=TT2.RHn;
 
 % TRAIN=RAINC+RAINNC;
