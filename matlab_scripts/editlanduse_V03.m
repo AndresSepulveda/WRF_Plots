@@ -38,10 +38,10 @@
 %  Christian Torregrosa, e-mail: chtorregrosa@gmail.com
 %  Osvaldo Artal, e-mail: oartal@oasc.cl (8,sept,2011)
 %
+%  Adaptado por Natalia Catalina Carrera Avila (DGEO-UdeC)
 %--------------------------------------------------------------------------
 
-function editlanduse_V02(cmin,cmax,bathymetryfile,coastlinefile)
-%function editbat_grdbat(cmin,cmax,bathymetryfile,coastlinefile)
+function editlanduse_V03(cmin,cmax,bathymetryfile,coastlinefile)
 
 % handles of the GUI elements
 global handles;
