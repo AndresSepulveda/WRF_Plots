@@ -14,7 +14,7 @@ from wrf import (getvar, to_np, vertcross, smooth2d, CoordPair, GeoBounds,
                  get_cartopy, latlon_coords, cartopy_xlim, cartopy_ylim)
 
 # Open the NetCDF file
-ncfile = Dataset("wrfout_d01_2016-10-07_00_00_00")
+ncfile = Dataset("wrfout_d01_2021-09-22_00:00:00")
 
 # Get the WRF variables
 slp = getvar(ncfile, "slp")
@@ -26,8 +26,8 @@ Z = 10**(dbz/10.)
 wspd =  getvar(ncfile, "wspd_wdir", units="kt")[0,:]
 
 # Set the start point and end point for the cross section
-start_point = CoordPair(lat=26.76, lon=-80.0)
-end_point = CoordPair(lat=26.76, lon=-77.8)
+start_point = CoordPair(lat=-37.00, lon=-80.0)
+end_point   = CoordPair(lat=-37.00, lon=-77.8)
 
 # Compute the vertical cross-section interpolation.  Also, include the
 # lat/lon points along the cross-section in the metadata by setting latlon
