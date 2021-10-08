@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.cm import get_cmap
 import cartopy.crs as crs
-from cartopy.feature import NaturalEarthFeature
 
 from wrf import (getvar, interplevel, to_np, latlon_coords, get_cartopy,
                  cartopy_xlim, cartopy_ylim)
@@ -34,13 +33,6 @@ cart_proj = get_cartopy(ht_500)
 fig = plt.figure(figsize=(12,9))
 ax = plt.axes(projection=cart_proj)
 
-# Download and add the states and coastlines
-#states = NaturalEarthFeature(category="cultural", scale="50m",
-#                             facecolor="none",
-#                             name="admin_1_states_provinces_shp")
-#ax.add_feature(states, linewidth=0.5, edgecolor="black")
-#ax.coastlines('50m', linewidth=0.8)
-
 # Add the 500 hPa geopotential height contours
 levels = np.arange(520., 580., 6.)
 contours = plt.contour(to_np(lons), to_np(lats), to_np(ht_500),
@@ -56,7 +48,7 @@ wspd_contours = plt.contourf(to_np(lons), to_np(lats), to_np(wspd_500),
                              transform=crs.PlateCarree())
 plt.colorbar(wspd_contours, ax=ax, orientation="horizontal", pad=.05)
 
-# Add the 500 hPa wind barbs, only plotting every 125th data point.
+# Add the 500 hPa wind barbs, only plotting every 5th data point.
 plt.barbs(to_np(lons[::5,::5]), to_np(lats[::5,::5]),
           to_np(u_500[::5, ::5]), to_np(v_500[::5, ::5]),
           transform=crs.PlateCarree(), length=6)
