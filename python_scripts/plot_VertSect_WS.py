@@ -21,11 +21,15 @@ ctt = getvar(ncfile, "ctt")
 z = getvar(ncfile, "z")
 dbz = getvar(ncfile, "dbz")
 Z = 10**(dbz/10.)
-wspd =  getvar(ncfile, "wspd_wdir", units="kt")[0,:]
+wspd =  getvar(ncfile, "wspd_wdir", units="m s-1")[0,:]
 
 # Set the start point and end point for the cross section
 start_point = CoordPair(lat=-37.00, lon=-80.0)
-end_point   = CoordPair(lat=-37.00, lon=-77.8)
+end_point = CoordPair(lat=-37.00, lon=-77.8)
+
+# Create a figure that will have 3 subplots
+fig = plt.figure(figsize=(12,9))
+ax_wspd = fig.add_subplot(1,1,1)
 
 # Compute the vertical cross-section interpolation.  Also, include the
 # lat/lon points along the cross-section in the metadata by setting latlon
@@ -56,6 +60,6 @@ ax_wspd.set_yticks(v_ticks[::20])
 ax_wspd.set_yticklabels(vert_vals[::20], fontsize=4)
 
 ax_wspd.set_ylabel("Height (m)", fontsize=5)
-ax_wspd.set_title("Cross-Section of Wind Speed (kt)", {"fontsize" : 7})
+ax_wspd.set_title("Cross-Section of Wind Speed (m/s)", {"fontsize" : 7})
 
 plt.savefig("VertSect_WS.png")
