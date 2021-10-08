@@ -1,0 +1,12 @@
+ml purge
+ml intel
+ml Python/3.8.2
+ml GEOS/3.8.0-Python-3.8.2
+ml PROJ/6.2.1
+ml basemap/1.2.2-Python-3.8.2
+ml ecCodes
+
+import netCDF4
+import cartopy
+import mpl_toolkits.basemap
+import wrf
