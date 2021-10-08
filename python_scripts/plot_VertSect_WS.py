@@ -24,8 +24,8 @@ Z = 10**(dbz/10.)
 wspd =  getvar(ncfile, "wspd_wdir", units="kt")[0,:]
 
 # Set the start point and end point for the cross section
-start_point = CoordPair(lat=26.76, lon=-80.0)
-end_point = CoordPair(lat=26.76, lon=-77.8)
+start_point = CoordPair(lat=-37.00, lon=-80.0)
+end_point   = CoordPair(lat=-37.00, lon=-77.8)
 
 # Compute the vertical cross-section interpolation.  Also, include the
 # lat/lon points along the cross-section in the metadata by setting latlon
