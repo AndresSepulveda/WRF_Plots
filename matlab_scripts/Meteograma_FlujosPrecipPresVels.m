@@ -219,7 +219,7 @@ cmap = colormap('jet');
 cmap = flipud(cmap);
 close all
 
-H = figure('Position', [100, 100, 1150, 950]);
+H = figure('Position', [100, 100, 1150, 950],'Visible','off');
 
 %% axes top
 
@@ -378,4 +378,6 @@ set(ax(2), 'XMinorTick', 'on', 'YMinorTick', 'on')
 set(ax(3), 'xminorgrid', 'on', 'yminorgrid', 'on')
 set(ax(3), 'XMinorTick', 'on', 'YMinorTick', 'on')
 
+ print(H,'-dpng','MySite.png');
+ close(H);
 end
