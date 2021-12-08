@@ -20,6 +20,6 @@ valid_time = datenum(inicio + minutes(data));% fechas para cada paso de tiempo
 
 % evaluamos desde t1 a t2 (formato datenum)
 t1 = inicio;% usamos el inicio de la simulacion 
-t2 = valid_time(end - 48);% cortamos al 5to dia (paso de tiempo horario)
+t2 = valid_time(end);% cortamos al 5to dia (paso de tiempo horario)
 
 [H] = meteogram_wrfout(nfile, name, inicio, rlon, rlat, t1, t2);
